@@ -1,40 +1,38 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import {Link, Tabs} from 'expo-router';
-import {Pressable, useColorScheme} from 'react-native';
-
-import Colors from '../../constants/Colors';
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{marginBottom: -3}} {...props} />;
-}
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Tabs } from "expo-router";
+import { useTheme } from "react-native-paper";
+import TabBarIcon from "../../components/BottomBarIcon";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const { colors } = useTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: colors.primary,
       }}
     >
       <Tabs.Screen
-        name='index'
+        name="machines"
         options={{
-          title: 'Machine State',
-          tabBarIcon: ({color}) => <TabBarIcon name='list-ul' color={color} />,
+          title: "Machine State",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="list-ul" color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name='two'
+        name="logpart"
         options={{
-          title: 'Log Part',
-          tabBarIcon: ({color}) => <TabBarIcon name='edit' color={color} />,
+          title: "Log Part",
+          tabBarIcon: ({ color }) => <TabBarIcon name="edit" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
         }}
       />
     </Tabs>

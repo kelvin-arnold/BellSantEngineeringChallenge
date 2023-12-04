@@ -1,5 +1,16 @@
 # Factory Health Monitor - Authentication, State Management, and Persistence
 
+## Solution
+
+The challenges was solved with some modifications in his structure, added some fake data to acomplish the scope of the challenges.
+
+### Updates
+
+- New structure for mobile app.
+- New structure for backend.
+- Added login with a fake username/password.
+- Added a simple database in the backend to simulate the persistence data (If the backend server is stop, the fakedata will we deleted)
+
 ## Overview
 
 You are provided with a starter project that includes a React Native mobile app and a backend API, each in their respective folders. Each folder contains a README with instructions on how to run the builds. The goal of this coding challenge is to add authentication and session management to the app, improve the state management of the data returned by the API, and implement a persistence layer on the backend. When a user logs in, their history of data points and scores should be retrieved and displayed.
